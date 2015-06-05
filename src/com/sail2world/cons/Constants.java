@@ -8,17 +8,14 @@ public class Constants {
 	public static final String userKey_on = "UserKey=jiangzy_id_rsa";
 	public static final String mysql_sd_7_on = "FwdReqCount=2";
 	public static final String default_path = "C:\\Users\\Administrator\\Documents\\NetSarang\\Xshell\\Sessions\\龙珠Q传\\";
-	public static final String dny_temp_path = default_path+"东南亚服\\东南亚英文\\游戏服\\（东南亚英文04服-05服）54.254.108.188.xsh";
-	public static final String dny_path = default_path + "东南亚服\\东南亚英文";
 	public static final String script = "ScriptPath=";
 	public static final String script_off = "UseInitScript=0";
 	public static final String font_9 = "FontSize=9";
 	public static final String userName_off="UserName=root";
 	public static final String userKey_off="UserKey=mouyu_id_rsa";
-	
-	
+	public static final String userName_jq_off = "UserName=lidx";
+	public static final String userKey_jq_off = "UserKey=lidx_id_rsa";
 	public static final String sd_flag="ForwardToXmanager=1";
-	
 	public static final String mysql_sd_1_add="FwdReq_0_Incoming=0";
 	public static final String mysql_sd_2_add="FwdReq_0_Description=";
 	public static final String mysql_sd_3_add="FwdReq_0_Source=localhost";

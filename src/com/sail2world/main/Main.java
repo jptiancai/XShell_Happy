@@ -2,26 +2,31 @@
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
 import com.sail2world.cons.Constants;
-
+/**
+ * <p>step 1:session目录-->更改default_path、root</p>
+ * <p>step 2:公钥-->更改userName_on、userKey_on内容</p>
+ * 
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		File dny_f = new File(Constants.dny_path);
+		File default_f = new File(Constants.default_path);
 		String[] ext = { "xsh" };
-//		Collection<File> dny_files = FileUtils.listFiles(dny_f, ext, true);
-		Collection<File> dny_files = new ArrayList<File>();
-		dny_files.add(new File(Constants.dny_temp_path));
-		happy_dny(Constants.userName_off, Constants.userKey_off,
+		Collection<File> default_files = FileUtils.listFiles(default_f, ext, true);
+		happy_xshell(Constants.userName_off, Constants.userKey_jq_off,
 				Constants.script, Constants.script_off, Constants.font_9,
-				dny_files);
+				default_files);
+		happy_xshell(Constants.userName_jq_off, Constants.userKey_jq_off,
+				Constants.script, Constants.script_off, Constants.font_9,
+				default_files);
 
 	}
 
@@ -32,23 +37,24 @@ public class Main {
 	 * @param dny_files
 	 * @throws IOException
 	 */
-	private static void happy_dny(String userName_off, String userKey_off,
+	private static void happy_xshell(String userName_off, String userKey_off,
 			String script, String script_off, String font_9,
 			Collection<File> dny_files) throws IOException {
 		for (File f : dny_files) {
 			List<String> list = getContent(f);
 			for (int i = 0; i < list.size(); i++) {
-				// 设置登录公钥
-//				replace(f, list, i, userName_off, Constants.userName_on);
-//				replace(f, list, i, userKey_off, Constants.userKey_on);
-				// 设置隧道
-				add(f, list, i);
-				replace(f, list, i, Constants.mysql_sd_7_off, Constants.mysql_sd_7_on);
-				// // 设置打开会话即是root权限
-				// replace(f, list, i, script_off, script_on);
-				// replace(f, list, i, script, root);
-				// // 设置字体为14号，适合查看日志
-				// replace(f, list, i, font_9, font_14);
+				// 设置登录公钥�Կ
+				
+				replace(f, list, i, userName_off, Constants.userName_on);
+				replace(f, list, i, userKey_off, Constants.userKey_on);
+				// 设置隧道�
+//				add(f, list, i);
+//				replace(f, list, i, Constants.mysql_sd_7_off, Constants.mysql_sd_7_on);
+				 // 设置打开会话即是root权限�
+				 replace(f, list, i, script_off, Constants.script_on);
+				 replace(f, list, i, script, Constants.root);
+				 // 设置字体为14号，适合查看日志
+				 replace(f, list, i, font_9, Constants.font_14);
 
 			}
 			System.out.println(f.getName() + "--->√");
