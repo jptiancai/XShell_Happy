@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 
 import com.sail2world.cons.Constants;
 /**
+ * <p>step 0：运营管理员通过你的root权限</p>
  * <p>step 1:session目录-->更改default_path、root</p>
  * <p>step 2:公钥-->更改userName_on、userKey_on内容</p>
  * 
